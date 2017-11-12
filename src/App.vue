@@ -34,7 +34,7 @@
           {{item.title}}
         </v-btn>
       </v-toolbar-items>
-
+<!--todo: dropdown menu Еще (More) or sidebar-->
     </v-toolbar>
     <main>
       <v-content>
@@ -56,9 +56,8 @@
         menuItems: [
           {icon:'supervisor_account', title: 'Проблема', link: '/problem'},
           {icon:'room', title: 'Технологии', link: '/hitech'},
-          {icon:'person', title: 'Профиль', link: '/profile'},
-          {icon:'face', title: 'Sign up', link: '/signup'},
-          {icon:'lock_open', title: 'Войти', link: '/signin'}
+          {icon:'person', title: 'Альтернатива', link: '/alternative'},
+          {icon:'face', title: 'О проекте', link: '/about'}
         ]
       }
     }

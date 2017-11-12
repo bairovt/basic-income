@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/Home'
+import BasicIncome from '@/components/BasicIncome'
 import About from '@/components/Pages/About'
+import Practice from '@/components/Pages/Practice'
 import Problem from '@/components/Pages/Problem'
-import Profile from '@/components/User/Profile'
-import Signin from '@/components/User/Signin'
-import Signup from '@/components/User/Signup'
+import Views from '@/components/Pages/Views'
+// import Profile from '@/components/User/Profile'
+// import Signin from '@/components/User/Signin'
+// import Signup from '@/components/User/Signup'
 
 Vue.use(Router)
 
@@ -13,40 +15,31 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
-      component: Home
+      name: 'BasicIncome',
+      component: BasicIncome
     },
     {
       path: '/problem',
       name: 'Problem',
       component: Problem
     },
-    // {
-    //   path: '/meetup/new',
-    //   name: 'CreateMeetup',
-    //   component: CreateMeetup
-    // },
-    // {
-    //   path: '/meetups/:id',
-    //   name: 'Meetup',
-    //   props: true,
-    //   component: Meetup
-    // },
     {
-      path: '/profile',
-      name: 'Profile',
-      component: Profile
+      path: '/practice',
+      name: 'Practice',
+      component: Practice
     },
     {
-      path: '/signin',
-      name: 'Signin',
-      component: Signin
+      path: '/views',
+      name: 'Views',
+      props: true,
+      component: Views
     },
     {
-      path: '/signup',
-      name: 'Signup',
-      component: Signup
-    }
+      path: '/about',
+      name: 'About',
+      props: true,
+      component: About
+    },
   ],
   mode: 'history'
 })
