@@ -20,8 +20,8 @@
     <v-toolbar dark class="primary">
       <v-toolbar-side-icon
           @click.stop="drawer = !drawer"
-          class="hidden-sm-and-up"
       ></v-toolbar-side-icon>
+      <!--class="hidden-sm-and-up"-->
       <v-toolbar-title>
         <router-link to="/" tag="span" style="cursor: pointer">
           <v-icon dark left>spa</v-icon> Базовый доход
@@ -55,12 +55,48 @@
         drawer: false,
         menuItems: [
           {icon:'supervisor_account', title: 'Проблема', link: '/problem'},
-          {icon:'room', title: 'Технологии', link: '/hitech'},
-          {icon:'person', title: 'Альтернатива', link: '/alternative'},
-          {icon:'face', title: 'О проекте', link: '/about'}
+          {icon:'android', title: 'Технологии', link: '/hitech'},
+          {icon:'toys', title: 'Альтернатива', link: '/alternative'},
+          {icon:'done', title: 'О проекте', link: '/about'}
         ]
       }
     }
   }
 
 </script>
+
+<style>
+  /*h1, h2 {*/
+    /*font-weight: normal;*/
+  /*}*/
+
+  /*ul {*/
+    /*list-style-type: none;*/
+    /*padding: 0;*/
+  /*}*/
+
+  /*li {*/
+    /*display: inline-block;*/
+    /*margin: 0 10px;*/
+  /*}*/
+
+  a {
+    /*color: #009688;*/
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+  /* чтобы не подчеркивались пункты меню при наведении */
+  a.btn {
+    text-decoration: none;
+  }
+  a.list__tile {
+    text-decoration: none;
+  }
+
+  p {
+    font-size: 1.3em;
+  }
+</style>

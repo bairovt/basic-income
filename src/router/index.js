@@ -4,6 +4,7 @@ import BasicIncome from '@/components/BasicIncome'
 import About from '@/components/Pages/About'
 import Practice from '@/components/Pages/Practice'
 import Problem from '@/components/Pages/Problem'
+import Alternative from '@/components/Pages/Alternative'
 import Views from '@/components/Pages/Views'
 // import Profile from '@/components/User/Profile'
 // import Signin from '@/components/User/Signin'
@@ -22,6 +23,11 @@ export default new Router({
       path: '/problem',
       name: 'Problem',
       component: Problem
+    },
+    {
+      path: '/alternative',
+      name: 'Alternative',
+      component: Alternative
     },
     {
       path: '/practice',
