@@ -26,7 +26,11 @@
 				<!--<p>По данным исследования ... % автоматизации в России ...</p>-->
 					<!--Сдерживающим фактором является нехватка кадров и несформированная законодательная база-->
 				<p>Перед Россией, как и <router-link to="/practice">другими странами</router-link>, стоит непростая задача
-					- не допустить социальной катастрофы в связи с <a target="_blank" href="https://lenta.ru/articles/2017/11/14/rob_job/">многомиллионной безработицей</a>.</p>
+					- не допустить социальной катастрофы в связи
+					с <a target="_blank" href="https://lenta.ru/articles/2017/11/14/rob_job/">многомиллионной безработицей</a>.
+					По разным оценкам, она возрастет на величину от <a target="_blank" href="https://www.kommersant.ru/doc/3453749">
+					3 миллионов</a> в ближайшее время до 30 в долгосрочной перспективе.
+				</p>
 				<p>Очень вероятно, что для это придется переосмыслить всю концепцию экономики и социального уклада.</p>
 				<p>
 					Самым явным и кардинальным решением данной проблемы, <router-link to="/views">по мнению многих</router-link>,
@@ -48,21 +52,20 @@
 							<v-flex xs7>
 								<v-card-title >
 									<span v-for="tech in job.techs" :key="tech">
-										<router-link to="" class="info--text">
-											{{ tech }}
-										</router-link>
-										&nbsp;&nbsp;&nbsp;
+										<!--<router-link v-if="tech.url" to="" class="info&#45;&#45;text"></router-link>-->
+										<!--<span v-else>{{ tech }}</span>-->
+										<span>{{ tech }}</span>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									</span>
 								</v-card-title>
 							</v-flex>
 						</v-layout>
-						<v-layout row>
+						<v-layout row v-if="jobsInDanger">
 							<v-flex xs12>
 								<span v-for="confirm in job.confirms" :key="confirm.id" >
 									<router-link to="">
-										{{ confirm.thesis }}
-									</router-link>
-									&nbsp;&nbsp;&nbsp;
+										{{ confirm.thesis }}</router-link>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 								</span>
 							</v-flex>
 						</v-layout>
@@ -74,12 +77,23 @@
 </template>
 
 <script>
+	import axios from 'axios'
 	export default {
-	  computed: {
-		  jobsInDanger () {
-	      return this.$store.getters.jobsInDanger
-	    },
-	  }
+	  data () {
+	    return {
+        //'Блокчейн', 'ИИ', 'Роботизация', 'Криптовалюта', 'Смарт-контракты', '3D-печать', 'Беспилотники', 'IoT'
+        // IT-сервисы, Car-sharing
+        jobsInDanger: null
+		  }
+	  },
+		created: function () {
+	    let vm = this;
+			axios.get('http://83.234.160.113:8585/_db/basic-income/income/jobs-in-danger')
+					.then(resp => {
+					  vm.jobsInDanger = resp.data
+					})
+					.catch(console.error)
+		}
 	}
 </script>
 
