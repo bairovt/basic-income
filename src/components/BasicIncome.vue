@@ -2,12 +2,49 @@
 	<v-container>  <!-- fluid class="mt-3"-->
 		<v-layout row>
 			<v-flex>
-				<h5 class="primary--text"><a target="_blank" href="https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D0%B7%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%BD%D1%8B%D0%B9_%D0%B1%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B9_%D0%B4%D0%BE%D1%85%D0%BE%D0%B4">
-					Безусловный базовый (основной) доход</a>
-				</h5>
+				<h5 class="primary--text">Базовый доход</h5>
+				<!--<h5 class="primary&#45;&#45;text">-->
+				<p>
+					На данном ресурсе <b>базовый доход (БД)</b> понимается как обобщенная идея, сочетающая в себе такие понятия
+					как:
+					<a target="_blank" href="https://ru.wikipedia.org/wiki/Безусловный_базовый_доход">
+						безусловный базовый доход (ББД)</a>, безусловный основной доход (БОД), универсальный базовый доход,
+					а также <router-link to="/alternative">альтернативные меры</router-link> по решению
+					<router-link to="/problem">проблемы</router-link>
+					массовой безработицы, связанной с четвертой промышленной революцией.
+				</p>
+
 				<br>
 				<br>
-				<br>
+			</v-flex>
+		</v-layout>
+		<v-layout row wrap>
+			<v-flex xs12 class="text-xs-center primary--text">
+				<h5>Аргументы</h5>
+			</v-flex>
+			<v-flex xs12 sm6 class="text-xs-left">
+				<h5 class="text-xs-center">За</h5>
+				<ul>
+					<li>
+						<p><a target="_blank" href="https://hightech.fm/2016/12/14/ubi_health">
+						Положительно влияет на психическое здоровье</a></p>
+					</li>
+					<li><p>...</p></li>
+					<li><p>...</p></li>
+					<li><p>...</p></li>
+				</ul>
+			</v-flex>
+			<v-flex xs12 sm6 class="text-xs-right">
+				<h5 class="text-xs-center">Против</h5>
+				<ul>
+					<li>
+						<p>Повлечет инфляцию</p>
+						контраргумент: инфляции быть не должно, т.к. БД не подразумевает дополнительной эмиссии денег
+					</li>
+					<li><p>...</p></li>
+					<li><p>...</p></li>
+					<li><p>...</p></li>
+				</ul>
 			</v-flex>
 		</v-layout>
 	</v-container>
@@ -37,9 +74,11 @@
 		color: white;
 		font-size: 2em;
 	}
-
 	.carousel__controls {       /*does not imply - how to change default classes*/
 		height: 20px !important;
+	}
+	ul {
+		list-style-type: none;
 	}
 
 </style>

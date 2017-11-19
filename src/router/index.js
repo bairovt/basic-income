@@ -5,6 +5,7 @@ import About from '@/components/Pages/About'
 import Practice from '@/components/Pages/Practice'
 import Problem from '@/components/Pages/Problem'
 import Alternative from '@/components/Pages/Alternative'
+import Finance from '@/components/Pages/Finance'
 import Views from '@/components/Pages/Views'
 // import Profile from '@/components/User/Profile'
 // import Signin from '@/components/User/Signin'
@@ -30,6 +31,11 @@ export default new Router({
       component: Alternative
     },
     {
+      path: '/finance',
+      name: 'Finance',
+      component: Finance
+    },
+    {
       path: '/practice',
       name: 'Practice',
       component: Practice
@@ -47,5 +53,5 @@ export default new Router({
       component: About
     },
   ],
-  mode: 'history'
+  // mode: 'history'
 })

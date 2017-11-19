@@ -57,6 +57,7 @@
           {icon:'supervisor_account', title: 'Проблема', link: '/problem'},
           {icon:'android', title: 'Технологии', link: '/hitech'},
           {icon:'grade', title: 'Альтернатива', link: '/alternative'},
+          {icon:'grade', title: 'Ресурсы', link: '/finance'},
           {icon:'done', title: 'О проекте', link: '/about'}
         ]
       }
