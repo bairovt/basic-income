@@ -1,5 +1,7 @@
 <template>
 	<v-container>  <!-- fluid class="mt-3"-->
+		<app-page-in-dev></app-page-in-dev>
+
 		<v-layout row>
 			<v-flex>
 				<h5 class="primary--text">Базовый доход</h5>

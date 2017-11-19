@@ -1,5 +1,7 @@
 <template>
 	<v-container>
+		<app-page-in-dev></app-page-in-dev>
+
 		<v-layout row wrap>
 			<v-flex xs12>
 				<p>Альтернативой <a target="_blank" href="https://ru.wikipedia.org/wiki/Безусловный_базовый_доход">

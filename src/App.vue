@@ -55,8 +55,8 @@
         drawer: false,
         menuItems: [
           {icon:'supervisor_account', title: 'Проблема', link: '/problem'},
-          {icon:'android', title: 'Технологии', link: '/hitech'},
-          {icon:'grade', title: 'Альтернатива', link: '/alternative'},
+          {icon:'android', title: 'Технологии', link: '/hi-tech'},
+          {icon:'edit', title: 'Альтернатива', link: '/alternative'},
           {icon:'grade', title: 'Ресурсы', link: '/finance'},
           {icon:'done', title: 'О проекте', link: '/about'}
         ]
