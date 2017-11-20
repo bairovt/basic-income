@@ -5,6 +5,11 @@
 		<v-layout row wrap>
 			<v-flex xs12>
 				<h5>Видение авторитетов</h5>
+				<p>
+					<a target="_blank" href="https://hightech.fm/2017/11/08/andrew-ng">
+						Эндрю Ын предлагает ввести БОД для "пострадавших от ИИ"
+					</a>
+				</p>
 			</v-flex>
 		</v-layout>
 	</v-container>

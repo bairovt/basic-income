@@ -31,9 +31,11 @@
 					с <a target="_blank" href="https://lenta.ru/articles/2017/11/14/rob_job/">многомиллионной безработицей</a>.
 					По разным оценкам, она возрастет на величину от <a target="_blank" href="https://www.kommersant.ru/doc/3453749">
 						3 миллионов</a> в ближайшее время до <a target="_blank" href="https://www.rbc.ru/opinions/economics/13/01/2017/5878d2389a79470077130332">
-						50 миллионов (70%)</a> в долгосрочной перспективе.
+						50 миллионов (70%)</a> через 15-20 лет.
 				</p>
-				<p>Очень вероятно, что для этого придется переосмыслить всю концепцию экономики и социального уклада.</p>
+				<p>Очень вероятно, что для этого придется
+					<a target="_blank" href="https://hightech.fm/2016/12/15/chinese_influence">переосмыслить</a>
+					всю	концепцию экономики и социального уклада.</p>
 				<p>
 					Самым явным и кардинальным решением данной проблемы, <router-link to="/views">по мнению многих</router-link>,
 					является введение <router-link to="/">безусловного базового дохода</router-link>.
@@ -65,8 +67,13 @@
 						<v-layout row v-if="jobsInDanger">
 							<v-flex xs12>
 								<span v-for="confirm in job.confirms" :key="confirm.id" >
-									<router-link to="">
-										{{ confirm.thesis }}</router-link>
+									<a v-if="confirm.url" target="_blank" :href="confirm.url" class="info--text">
+										{{ confirm.thesis }}
+									</a>
+									<span v-else>{{ confirm.thesis }}</span>
+									<!--<router-link to="">-->
+										<!--{{ confirm.thesis }}-->
+									<!--</router-link>-->
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 								</span>
 							</v-flex>
