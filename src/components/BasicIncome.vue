@@ -15,11 +15,7 @@
 					<router-link to="/problem">проблемы</router-link>
 					массовой безработицы, связанной с четвертой промышленной революцией.
 				</p>
-				<p><b>Критерии БД независимо от способа реализации:</b></p>
-				<p>БД должен быть не менее прожиточного минимума</p>
-				<p>БД нельзя потратить на покупку алкоголя, сигарет, азартные игры и т.д.
-					Например, начислять на спец. карту</p>
-
+				<p><router-link to="/features">Критерии БД независимо от способа реализации</router-link></p>
 				<br>
 				<br>
 			</v-flex>
@@ -29,26 +25,28 @@
 				<h5>Аргументы</h5>
 			</v-flex>
 			<v-flex xs12 sm6 class="text-xs-left">
-				<h5 class="text-xs-center">За</h5>
+				<h5 class="text-xs-center">
+					За
+					<v-btn primary>Добавить</v-btn>
+				</h5>
 				<ul>
 					<li>
 						<p><a target="_blank" href="https://hightech.fm/2016/12/14/ubi_health">
 						Положительно влияет на психическое здоровье</a></p>
 					</li>
 					<li><p>...</p></li>
-					<li><p>...</p></li>
-					<li><p>...</p></li>
 				</ul>
 			</v-flex>
 			<v-flex xs12 sm6 class="text-xs-right">
-				<h5 class="text-xs-center">Против</h5>
+				<h5 class="text-xs-center">
+					Против
+					<v-btn primary>Добавить</v-btn>
+				</h5>
 				<ul>
 					<li>
 						<p>Повлечет инфляцию</p>
 						контраргумент: инфляции быть не должно, т.к. БД не подразумевает дополнительной эмиссии денег
 					</li>
-					<li><p>...</p></li>
-					<li><p>...</p></li>
 					<li><p>...</p></li>
 				</ul>
 			</v-flex>

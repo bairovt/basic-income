@@ -7,6 +7,7 @@ import Problem from '@/components/Pages/Problem'
 import Alternative from '@/components/Pages/Alternative'
 import Finance from '@/components/Pages/Finance'
 import Views from '@/components/Pages/Views'
+import Features from '@/components/Pages/Features'
 import HiTech from '@/components/Techs/HiTech'
 // import Profile from '@/components/User/Profile'
 // import Signin from '@/components/User/Signin'
@@ -53,11 +54,17 @@ export default new Router({
       component: Views
     },
     {
+      path: '/features',
+      name: 'Features',
+      props: true,
+      component: Features
+    },
+    {
       path: '/about',
       name: 'About',
       props: true,
       component: About
     },
   ],
-  // mode: 'history'
+  mode: 'history'
 })
