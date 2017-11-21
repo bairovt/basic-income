@@ -30,8 +30,8 @@
 					- не допустить социальной катастрофы в связи
 					с <a target="_blank" href="https://lenta.ru/articles/2017/11/14/rob_job/">многомиллионной безработицей</a>.
 					По разным оценкам, она возрастет на величину от <a target="_blank" href="https://www.kommersant.ru/doc/3453749">
-						3 миллионов</a> в ближайшее время до <a target="_blank" href="https://www.rbc.ru/opinions/economics/13/01/2017/5878d2389a79470077130332">
-						50 миллионов (70%)</a> через 15-20 лет.
+						3 миллионов</a> в ближайшее время, а в течение 15-20 лет <a target="_blank" href="https://www.rbc.ru/opinions/economics/13/01/2017/5878d2389a79470077130332">
+						исчезнут 50-70%</a> нынешних рабочих мест.
 				</p>
 				<p>Очень вероятно, что для этого придется
 					<a target="_blank" href="https://hightech.fm/2016/12/15/chinese_influence">переосмыслить</a>
@@ -74,7 +74,7 @@
 									<!--<router-link to="">-->
 										<!--{{ confirm.thesis }}-->
 									<!--</router-link>-->
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									&nbsp;&nbsp; <b>&#183;</b> &nbsp;&nbsp;
 								</span>
 							</v-flex>
 						</v-layout>
