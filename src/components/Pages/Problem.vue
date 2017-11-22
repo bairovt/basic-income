@@ -2,7 +2,7 @@
 	<v-container>
 		<v-layout row wrap>
 			<v-flex xs12>
-				<br>
+				<h5>Проблема</h5>
 				<blockquote>
 					Человечество стоит на краю новой технологической революции, которая кардинально изменит то,
 						как мы живем и работаем и относимся друг к другу.
@@ -15,8 +15,8 @@
 				<br>
 				<p>Следствием стремительного развития высоких технологий, таких как искусственый интеллект,
 					блокчейн, роботизация, интернет вещей и т.д., а также повсеместности сети Интернет,
-					<a target="_blank" href="https://hightech.fm/2016/12/13/cant_stop">автоматизация</a>
-					большинства производственных, бизнес и других рабочих процессов становится неизбежной.
+					автоматизация	большинства производственных, бизнес и других рабочих процессов становится
+					<a target="_blank" href="https://hightech.fm/2016/12/13/cant_stop">неизбежной</a>.
 				</p>
 				<p>Данный процесс эволюции общества называют <a target="_blank" href="https://ru.wikipedia.org/wiki/%D0%A7%D0%B5%D1%82%D0%B2%D1%91%D1%80%D1%82%D0%B0%D1%8F_%D0%BF%D1%80%D0%BE%D0%BC%D1%8B%D1%88%D0%BB%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F_%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D0%B8%D1%8F">
 					четвёртой промышленной революцией</a>	или Индустрия 4.0.
@@ -66,7 +66,8 @@
 						</v-layout>
 						<v-layout row v-if="jobsInDanger">
 							<v-flex xs12>
-								<span v-for="confirm in job.confirms" :key="confirm.id" >
+								<span v-for="confirm in job.confirms" :key="confirm.id"
+								>
 									<a v-if="confirm.url" target="_blank" :href="confirm.url" class="info--text">
 										{{ confirm.thesis }}
 									</a>
@@ -82,6 +83,9 @@
 				</v-card>
 			</v-flex>
 		</v-layout>
+		<br>
+		<br>
+		<br>
 	</v-container>
 </template>
 

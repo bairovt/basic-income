@@ -5,7 +5,7 @@ import About from '@/components/Pages/About'
 import Practice from '@/components/Pages/Practice'
 import Problem from '@/components/Pages/Problem'
 import Alternative from '@/components/Pages/Alternative'
-import Finance from '@/components/Pages/Finance'
+import Resource from '@/components/Pages/Resource'
 import Views from '@/components/Pages/Views'
 import Features from '@/components/Pages/Features'
 import HiTech from '@/components/Techs/HiTech'
@@ -38,9 +38,9 @@ export default new Router({
       component: Alternative
     },
     {
-      path: '/finance',
-      name: 'Finance',
-      component: Finance
+      path: '/resource',
+      name: 'Resource',
+      component: Resource
     },
     {
       path: '/practice',
