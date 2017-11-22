@@ -32,7 +32,7 @@
 			<v-flex xs12 sm6 class="text-xs-left">
 				<h5 class="text-xs-center">
 					За
-					<v-btn primary>Добавить</v-btn>
+					<v-btn class="primary">Добавить</v-btn>
 				</h5>
 				<ul>
 					<li>
@@ -48,7 +48,7 @@
 			<v-flex xs12 sm6 class="text-xs-right">
 				<h5 class="text-xs-center">
 					Против
-					<v-btn primary>Добавить</v-btn>
+					<v-btn class="primary">Добавить</v-btn>
 				</h5>
 				<ul>
 					<li>

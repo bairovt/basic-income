@@ -35,7 +35,11 @@
 			</v-flex>
 			<v-flex xs12 sm6>
 				<h5>Обратная связь</h5>
-				<span>Обязательно только поле "Текст сообщения"</span>
+				<small>Обязательно только поле "Текст сообщения"</small>
+
+				<v-alert color="success" icon="info" dismissible v-model="alert">
+					Благодарим за содействие!
+				</v-alert>
 				<br>
 				<br>
 				<form @submit.prevent="sendFeedback">
@@ -81,7 +85,8 @@
       return {
         name: '',
         email: '',
-	      message: ''
+	      message: '',
+	      alert: false
       }
     },
     components: {VTextField},
@@ -89,13 +94,16 @@
 	  },
 	  methods: {
 	    sendFeedback () {
+	      this.alert = false
 	      axiosInst.post('/api/send-mail', {
 	        name: this.name,
 		      email: this.email,
 		      message: this.message
 	      })
 	          .then(resp => {
-		          console.log('Благодарим за содействие!')
+	            this.message = '';
+	            this.alert = true // todo: сделать плавным появления alert
+//		          console.log('Благодарим за содействие!')
 	          })
 	          .catch(console.error)
 	    }
