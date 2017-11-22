@@ -27,10 +27,10 @@
 					</li>
 				</ul>
 				<br>
-				<p>
-					Если Вы желаете оказать прямое материальное содействие,
-					автора проекта это сподвигнет на большее :)
-				</p>
+				<!--<p>-->
+					<!--Если Вы желаете оказать прямое материальное содействие,-->
+					<!--автора проекта это сподвигнет на большее :)-->
+				<!--</p>-->
 				<br>
 			</v-flex>
 			<v-flex xs12 sm6>
@@ -38,29 +38,31 @@
 				<span>Обязательно только поле "Текст сообщения"</span>
 				<br>
 				<br>
-				<form>
+				<form @submit.prevent="sendFeedback">
 					<v-text-field
-							v-bind="name"
+							v-model="name"
 							name="name"
 							id="name"
 							label="Имя"
 					></v-text-field>
 					<v-text-field
-							v-bind="email"
+							v-model="email"
 							type="email"
 							name="email"
 							id="email"
 							label="E-mail"
 					></v-text-field>
 					<v-text-field
-							v-bind="message"
+							v-model="message"
 							name="message"
 							id="message"
 							label="Текст сообщения"
 							required
 							multiLine
 					></v-text-field>
-					<v-btn class="primary">Отправить</v-btn>
+					<v-btn class="primary"
+					       type="submit"
+					>Отправить</v-btn>
 				</form>
 			</v-flex>
 		</v-layout>
@@ -72,7 +74,7 @@
 
 <script>
 	import VTextField from "vuetify/es5/components/VTextField/VTextField";
-	import axios from "axios"
+	import axiosInst from "@/utils/axios-instance"
 
   export default {
     data () {
@@ -84,6 +86,19 @@
     },
     components: {VTextField},
     computed: {
-	  }
+	  },
+	  methods: {
+	    sendFeedback () {
+	      axiosInst.post('/api/send-mail', {
+	        name: this.name,
+		      email: this.email,
+		      message: this.message
+	      })
+	          .then(resp => {
+		          console.log('Благодарим за содействие!')
+	          })
+	          .catch(console.error)
+	    }
+    }
 	}
 </script>

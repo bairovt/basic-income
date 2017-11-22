@@ -100,10 +100,10 @@
 		  }
 	  },
 		created: function () {
-	    let vm = this;
+//	    let vm = this;
 			axios.get('http://83.234.160.113:8585/_db/basic-income/income/jobs-in-danger')
 					.then(resp => {
-					  vm.jobsInDanger = resp.data
+					  this.jobsInDanger = resp.data
 					})
 					.catch(console.error)
 		}

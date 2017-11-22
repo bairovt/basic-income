@@ -7,6 +7,7 @@ import router from './router'
 import { store } from './store'
 import pageInDev from './components/Shared/PageInDev.vue'
 
+
 Vue.use(Vuetify)
 Vue.component('app-page-in-dev', pageInDev)
 
