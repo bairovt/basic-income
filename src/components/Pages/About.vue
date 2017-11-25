@@ -22,9 +22,9 @@
 						<p>Отправить свои отзывы, предложения, пожелания, замечания
 						и ссылки на полезные материалы через форму обратной связи на этой странице</p>
 					</li>
-					<li>
-						<p>Публиковать и репостить информацию об этом ресурсе в социальных сетях</p>
-					</li>
+					<!--<li>-->
+						<!--<p>Публиковать и репостить информацию об этом ресурсе в социальных сетях</p>-->
+					<!--</li>-->
 				</ul>
 				<br>
 				<!--<p>-->
@@ -66,7 +66,14 @@
 					></v-text-field>
 					<v-btn class="primary"
 					       type="submit"
-					>Отправить</v-btn>
+					       :disabled="loading"
+					       :loading="loading"
+					>
+						Отправить
+						<span slot="loader" class="custom-loader">
+						<v-icon light>cached</v-icon>
+						</span>
+					</v-btn>
 				</form>
 			</v-flex>
 		</v-layout>
@@ -91,21 +98,29 @@
     },
     components: {VTextField},
     computed: {
+      loading () {
+        return this.$store.getters.loading
+      }
 	  },
 	  methods: {
 	    sendFeedback () {
-	      this.alert = false
+	      this.alert = false;    //исчезание алерта при повторноай отправке
+		    this.$store.commit('setLoading', true);
 	      axiosInst.post('/api/send-mail', {
 	        name: this.name,
 		      email: this.email,
 		      message: this.message
 	      })
 	          .then(resp => {
-	            this.message = '';
+              this.$store.commit('setLoading', false);
+	            this.message = ''; // очистка поля
 	            this.alert = true // todo: сделать плавным появления alert
 //		          console.log('Благодарим за содействие!')
 	          })
-	          .catch(console.error)
+	          .catch(error => {
+              this.$store.commit('setLoading', false);
+	            console.error(error)
+	          })
 	    }
     }
 	}

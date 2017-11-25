@@ -1,6 +1,7 @@
 <template>
 	<v-container>  <!-- fluid class="mt-3"-->
 		<app-page-in-dev></app-page-in-dev>
+		<addition-dialog></addition-dialog>
 
 		<v-layout row>
 			<v-flex>

@@ -6,10 +6,11 @@ import App from './App'
 import router from './router'
 import { store } from './store'
 import pageInDev from './components/Shared/PageInDev.vue'
-
+import AdditionDialog from './components/Shared/AdditionDialog.vue'
 
 Vue.use(Vuetify)
 Vue.component('app-page-in-dev', pageInDev)
+Vue.component('addition-dialog', AdditionDialog)
 
 Vue.config.productionTip = false
 
