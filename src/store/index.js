@@ -5,16 +5,20 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   state: {
+    dialog: false,
     loading: false,
-    addition: 'default',
+    additionSubject: 'default',
     jobsInDanger: []
   },
   mutations: {
     setLoading (state, payload) {
       state.loading = payload
     },
-    setAddition (state, payload) {
-      state.addition = payload
+    setAdditionSubject (state, payload) {
+      state.additionSubject = payload
+    },
+    setDialogState (state, payload) {
+      state.dialog = payload
     },
   },
   actions: {
@@ -23,8 +27,11 @@ export const store = new Vuex.Store({
     loading (state) {
       return state.loading
     },
-    addition (state) {
-      return state.addition
+    additionSubject (state) {
+      return state.additionSubject
+    },
+    dialog (state) {
+      return state.dialog
     },
     /*loadedMeetups (state) {
       return state.loadedMeetups.sort((meetupA, meetupB) => {

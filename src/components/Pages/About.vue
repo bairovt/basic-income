@@ -106,7 +106,7 @@
 	    sendFeedback () {
 	      this.alert = false;    //исчезание алерта при повторноай отправке
 		    this.$store.commit('setLoading', true);
-	      axiosInst.post('/api/send-mail', {
+	      axiosInst.post('/api/send/feedback', {
 	        name: this.name,
 		      email: this.email,
 		      message: this.message

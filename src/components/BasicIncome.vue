@@ -33,7 +33,7 @@
 			<v-flex xs12 sm6 class="text-xs-left">
 				<h5 class="text-xs-center">
 					За
-					<v-btn class="primary">Добавить</v-btn>
+					<v-btn class="primary" @click.stop="openDialog('аргумент ЗА')">Добавить</v-btn>
 				</h5>
 				<ul>
 					<li>
@@ -66,13 +66,12 @@
 <script>
 	export default {
 		computed: {
-	    meetups () {
-	      return this.$store.getters.featuredMeetups
-	    }
+
 		},
 		methods: {
-	    onLoadMeetup (id) {
-	      this.$router.push('/meetups/'+id)
+      openDialog (additionSubject) {
+	      this.$store.commit('setAdditionSubject', additionSubject)
+        this.$store.commit('setDialogState', true)
 	    }
 		}
 	}

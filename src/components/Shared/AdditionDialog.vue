@@ -1,17 +1,18 @@
 <template>
 	<v-layout row>
 		<v-flex xs12>
-			<v-alert color="success" icon="info" dismissible v-model="alert">
-				Благодарим за содействие!
-			</v-alert>
-
 			<v-dialog v-model="dialog" max-width="500px">
 				<v-card>
+          <v-alert color="success" icon="info" dismissible v-model="alert">
+            Благодарим за содействие!
+          </v-alert>
+
 					<v-card-title>
-						Добавить {{ addition }}
+            Добавить  &nbsp <b>{{ additionSubject }}</b>
 					</v-card-title>
+
 					<v-card-text>
-						<form @submit.prevent="sendFeedback">
+						<form @submit.prevent="sendAddition">
 							<v-text-field
 									v-model="name"
 									name="name"
@@ -56,10 +57,11 @@
 </template>
 
 <script>
+  import axiosInst from "@/utils/axios-instance"
+
 	export default {
 	  data () {
 	    return {
-	      dialog: false,
         alert: false,
 		    loading: false,
         name: '',
@@ -68,31 +70,41 @@
 	    }
 	  },
 	  computed: {
-	    addition () {
-	      return this.$store.getters.addition
+      additionSubject () {
+	      return this.$store.getters.additionSubject
 	    },
-      loading () {
-        return this.$store.getters.loading
+      dialog: {
+        get () {
+          return this.$store.getters.dialog
+        },
+        set (newVal) {
+          return this.$store.commit('setDialogState', newVal)
+        }
       }
 	  },
     methods: {
+//	    closeDialog () {
+//	      this.$store.commit('setDialogState', false)
+//      },
       sendAddition () {
         this.alert = false;    //исчезание алерта при повторноай отправке
-        this.$store.commit('setLoading', true);
-        axiosInst.post('/api/send-addition', {
+//        this.$store.commit('setLoading', true);
+        this.loading = true;
+        axiosInst.post('/api/send/addition', {
           name: this.name,
           email: this.email,
           message: this.message,
           addition: this.addition
         })
             .then(resp => {
-              this.$store.commit('setLoading', false);
+              this.alert = true; // todo: сделать плавным появления alert
+              this.loading = false;
+//              this.$store.commit('setLoading', false);
               this.message = ''; // очистка поля
-              this.alert = true // todo: сделать плавным появления alert
 //		          console.log('Благодарим за содействие!')
             })
             .catch(error => {
-              this.$store.commit('setLoading', false);
+              this.loading = false;
               console.error(error)
             })
       }
