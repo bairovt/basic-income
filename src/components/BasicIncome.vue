@@ -49,7 +49,7 @@
 			<v-flex xs12 sm6 class="text-xs-right">
 				<h5 class="text-xs-center">
 					Против
-					<v-btn class="primary">Добавить</v-btn>
+					<v-btn class="primary" @click.stop="openDialog('аргумент ПРОТИВ')">Добавить</v-btn>
 				</h5>
 				<ul>
 					<li>

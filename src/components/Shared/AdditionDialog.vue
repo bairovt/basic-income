@@ -78,6 +78,7 @@
           return this.$store.getters.dialog
         },
         set (newVal) {
+          this.alert = false; // на случай закрытия диалога с активным алертом
           return this.$store.commit('setDialogState', newVal)
         }
       }
@@ -94,7 +95,7 @@
           name: this.name,
           email: this.email,
           message: this.message,
-          addition: this.addition
+          subject: this.additionSubject
         })
             .then(resp => {
               this.alert = true; // todo: сделать плавным появления alert
