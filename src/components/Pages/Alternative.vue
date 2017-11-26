@@ -1,6 +1,7 @@
 <template>
 	<v-container>
 		<app-page-in-dev></app-page-in-dev>
+    <addition-dialog></addition-dialog>
 
 		<v-layout row wrap>
 			<v-flex xs12>
@@ -16,7 +17,9 @@
 					</li>
 				</ul>
 				<br>
-				<v-btn class="primary">Предложить меру</v-btn>
+				<v-btn class="primary" @click.stop="openDialog('Альтернативу')">
+          Предложить меру
+        </v-btn>
 
 				<!--
 				<h6>Социальные технологии</h6>
@@ -31,8 +34,12 @@
 </template>
 
 <script>
+  import openDialog from '@/utils/open-dialog'
 	export default {
 	  computed: {
-	  }
+	  },
+    methods: {
+	    openDialog
+    }
 	}
 </script>

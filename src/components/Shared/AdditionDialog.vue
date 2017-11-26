@@ -8,7 +8,7 @@
           </v-alert>
 
 					<v-card-title>
-            Добавить  &nbsp <b>{{ additionSubject }}</b>
+            Предложить  &nbsp <b>{{ additionSubject }}</b>
 					</v-card-title>
 
 					<v-card-text>
@@ -77,9 +77,9 @@
         get () {
           return this.$store.getters.dialog
         },
-        set (newVal) {
+        set (val) {
           this.alert = false; // на случай закрытия диалога с активным алертом
-          return this.$store.commit('setDialogState', newVal)
+          return this.$store.commit('setDialogState', val)
         }
       }
 	  },

@@ -1,5 +1,7 @@
 <template>
 	<v-container>
+    <addition-dialog></addition-dialog>
+
 		<v-layout row wrap>
 			<v-flex xs12>
 				<h5>Проблема</h5>
@@ -43,7 +45,9 @@
 				<br>
 				<h6 class="accent--text text-xs-center">
 					Виды деятельности, подверженные значительной автоматизации
-					<v-btn large class="primary">Добавить</v-btn>
+					<v-btn large class="primary" @click.stop="openDialog('Вид деятельности')">
+            Добавить
+          </v-btn>
 				</h6>
 				<v-card class="mb-2" v-for="job in jobsInDanger" :key="job.id">
 					<v-container fluid>
@@ -91,6 +95,8 @@
 
 <script>
 	import axios from 'axios'
+  import openDialog from '@/utils/open-dialog'
+
 	export default {
 	  data () {
 	    return {
@@ -106,7 +112,10 @@
 					  this.jobsInDanger = resp.data
 					})
 					.catch(console.error)
-		}
+		},
+    methods: {
+	    openDialog
+    }
 	}
 </script>
 

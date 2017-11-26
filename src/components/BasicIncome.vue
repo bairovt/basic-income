@@ -33,7 +33,7 @@
 			<v-flex xs12 sm6 class="text-xs-left">
 				<h5 class="text-xs-center">
 					За
-					<v-btn class="primary" @click.stop="openDialog('аргумент ЗА')">Добавить</v-btn>
+					<v-btn class="primary" @click.stop="openDialog('аргумент ЗА')">Предложить</v-btn>
 				</h5>
 				<ul>
 					<li>
@@ -49,7 +49,7 @@
 			<v-flex xs12 sm6 class="text-xs-right">
 				<h5 class="text-xs-center">
 					Против
-					<v-btn class="primary" @click.stop="openDialog('аргумент ПРОТИВ')">Добавить</v-btn>
+					<v-btn class="primary" @click.stop="openDialog('аргумент Против')">Предложить</v-btn>
 				</h5>
 				<ul>
 					<li>
@@ -64,15 +64,11 @@
 </template>
 
 <script>
-	export default {
-		computed: {
+  import openDialog from '@/utils/open-dialog'
 
-		},
+	export default {
 		methods: {
-      openDialog (additionSubject) {
-	      this.$store.commit('setAdditionSubject', additionSubject)
-        this.$store.commit('setDialogState', true)
-	    }
+      openDialog
 		}
 	}
 </script>

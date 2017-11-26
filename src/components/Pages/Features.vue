@@ -1,11 +1,14 @@
 <template>
 	<v-container>
 		<app-page-in-dev></app-page-in-dev>
+    <addition-dialog></addition-dialog>
 
 		<v-layout row wrap>
 			<v-flex xs12>
 				<h5 class="primary--text">Каким должен быть базовый доход</h5>
-				<v-btn class="primary">Добавить</v-btn>
+				<v-btn class="primary" @click.stop="openDialog('Критерий базового дохода')">
+          Предложить
+        </v-btn>
 				<br>
 				<br>
 				<ul>
@@ -27,8 +30,11 @@
 </template>
 
 <script>
+  import openDialog from '@/utils/open-dialog'
+
 	export default {
-	  computed: {
-	  }
+    methods: {
+	    openDialog
+    }
 	}
 </script>
