@@ -73,7 +73,7 @@
 							<v-flex xs12>
 								<span v-for="proof in job.proofs" :key="proof._id"
 								>
-									<a v-if="proof.url" target="_blank" :href="proof.url" class="info--text">
+									<a v-if="proof.url" target="_blank" :href="proof.url" class="primary--text">
 										{{ proof.thesis }}
 									</a>
 									<span v-else>{{ proof.thesis }}</span>
@@ -99,17 +99,13 @@
 	export default {
 	  data () {
 	    return {
-        //'Блокчейн', 'ИИ', 'Роботизация', 'Криптовалюта', 'Смарт-контракты', '3D-печать', 'Беспилотники', 'IoT'
-        // IT-сервисы, Car-sharing
-        jobsInDanger: null
+        jobsInDanger: null  // IT-сервисы, Car-sharing
 		  }
 	  },
 		created: function () {
-//	    let vm = this;
 //			axios.get('http://83.234.160.113:8585/_db/basic-income/income/jobs-in-danger')
 			axiosInst.get('/api/load/jobs-in-danger')
 					.then(resp => {
-//					   console.log(JSON.stringify(resp))
 					  this.jobsInDanger = resp.data.jobs
 					})
 					.catch(console.error)
