@@ -43,7 +43,7 @@
 					является введение <router-link to="/">безусловного базового дохода</router-link>.
 				</p>
 				<br>
-				<h6 class="accent--text text-xs-center">
+				<h6 class="text-xs-center">
 					Виды деятельности, подверженные значительной автоматизации
 					<v-btn large class="primary" @click.stop="openDialog('Вид деятельности')">
             Добавить
@@ -60,7 +60,7 @@
 							<v-flex xs7>
 								<v-card-title >
 									<span v-for="tech in job.techs" :key="tech._id">
-										<a v-if="tech.url" class="info--text" :href="tech.url" :target="tech.target">
+										<a v-if="tech.url" class="secondary--text" :href="tech.url" :target="tech.target">
 											{{ tech.name }}
 										</a>
 										<span v-else>{{ tech.name }}</span>
@@ -79,6 +79,7 @@
 									<span v-else>{{ proof.thesis }}</span>
 									&nbsp; <b>&#183;</b> &nbsp;
 								</span>
+								<a style="cursor: pointer" class="primary--text" @click.stop="openDialog('Подтверждение')">добавить</a>
 							</v-flex>
 						</v-layout>
 					</v-container>
