@@ -59,27 +59,25 @@
 							</v-flex>
 							<v-flex xs7>
 								<v-card-title >
-									<span v-for="tech in job.techs" :key="tech">
-										<!--<router-link v-if="tech.url" to="" class="info&#45;&#45;text"></router-link>-->
-										<!--<span v-else>{{ tech }}</span>-->
-										<span>{{ tech }}</span>
-										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<span v-for="tech in job.techs" :key="tech._id">
+										<a v-if="tech.url" class="info--text" :href="tech.url" :target="tech.target">
+											{{ tech.name }}
+										</a>
+										<span v-else>{{ tech.name }}</span>
+										&nbsp; &nbsp; &nbsp;
 									</span>
 								</v-card-title>
 							</v-flex>
 						</v-layout>
 						<v-layout row v-if="jobsInDanger">
 							<v-flex xs12>
-								<span v-for="confirm in job.confirms" :key="confirm.id"
+								<span v-for="proof in job.proofs" :key="proof._id"
 								>
-									<a v-if="confirm.url" target="_blank" :href="confirm.url" class="info--text">
-										{{ confirm.thesis }}
+									<a v-if="proof.url" target="_blank" :href="proof.url" class="info--text">
+										{{ proof.thesis }}
 									</a>
-									<span v-else>{{ confirm.thesis }}</span>
-									<!--<router-link to="">-->
-										<!--{{ confirm.thesis }}-->
-									<!--</router-link>-->
-									&nbsp;&nbsp; <b>&#183;</b> &nbsp;&nbsp;
+									<span v-else>{{ proof.thesis }}</span>
+									&nbsp; <b>&#183;</b> &nbsp;
 								</span>
 							</v-flex>
 						</v-layout>
@@ -96,6 +94,7 @@
 <script>
 	import axios from 'axios'
   import openDialog from '@/utils/open-dialog'
+  import axiosInst from '@/utils/axios-instance'
 
 	export default {
 	  data () {
@@ -107,9 +106,11 @@
 	  },
 		created: function () {
 //	    let vm = this;
-			axios.get('http://83.234.160.113:8585/_db/basic-income/income/jobs-in-danger')
+//			axios.get('http://83.234.160.113:8585/_db/basic-income/income/jobs-in-danger')
+			axiosInst.get('/api/load/jobs-in-danger')
 					.then(resp => {
-					  this.jobsInDanger = resp.data
+//					   console.log(JSON.stringify(resp))
+					  this.jobsInDanger = resp.data.jobs
 					})
 					.catch(console.error)
 		},

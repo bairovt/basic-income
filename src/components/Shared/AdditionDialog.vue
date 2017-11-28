@@ -30,7 +30,7 @@
 									id="message"
 									label="Текст сообщения"
 									required
-									multiLine
+									textarea
 							></v-text-field>
 							<v-alert color="success" icon="info" dismissible v-model="alert">
 								Благодарим за содействие!

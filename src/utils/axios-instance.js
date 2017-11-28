@@ -2,13 +2,13 @@
 
 const axios = require('axios');
 
-const axiosIst = axios.create({
+const axiosInst = axios.create({
   baseURL: process.env.API_URL,
   // withCredentials: true
 });
 
 
-axiosIst.interceptors.request.use(function (config) {
+axiosInst.interceptors.request.use(function (config) {
     const authToken = window.localStorage.getItem('authToken'); // token or null
     if (authToken) config.headers.Authorization = 'Bearer ' + authToken;
     return config;
@@ -17,4 +17,4 @@ axiosIst.interceptors.request.use(function (config) {
     return Promise.reject(error);
   });
 
-export default axiosIst;
+export default axiosInst;

@@ -62,7 +62,7 @@
 							id="message"
 							label="Текст сообщения"
 							required
-							multiLine
+							textarea
 					></v-text-field>
 					<v-btn class="primary"
 					       type="submit"
