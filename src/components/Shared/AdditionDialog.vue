@@ -1,12 +1,10 @@
 <template>
 	<v-layout row>
 		<v-flex xs12>
-			<v-dialog v-model="dialog" max-width="500px">
+			<v-dialog v-model="dialog" max-width="500px"
+			          transition="false"
+			>
 				<v-card>
-          <v-alert color="success" icon="info" dismissible v-model="alert">
-            Благодарим за содействие!
-          </v-alert>
-
 					<v-card-title>
             Предложить  &nbsp <b>{{ additionSubject }}</b>
 					</v-card-title>
@@ -34,6 +32,9 @@
 									required
 									multiLine
 							></v-text-field>
+							<v-alert color="success" icon="info" dismissible v-model="alert">
+								Благодарим за содействие!
+							</v-alert>
 							<v-btn class="primary"
 							       type="submit"
 							       :disabled="loading"
