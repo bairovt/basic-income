@@ -33,7 +33,7 @@
 									textarea
 							></v-text-field>
 							<v-alert color="success" icon="info" dismissible v-model="alert">
-								Благодарим за содействие!
+								Благодарим за участие!
 							</v-alert>
 							<v-btn class="primary"
 							       type="submit"
