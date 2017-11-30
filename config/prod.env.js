@@ -1,4 +1,4 @@
 module.exports = {
   NODE_ENV: '"production"',
-  API_URL: '"http://basic-income.ru"'
+  API_URL: '"https://basic-income.ru"'
 }
