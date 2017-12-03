@@ -17,10 +17,10 @@ Vue.use(Vuetify, {
   }
 });
 
-Vue.component('app-page-in-dev', pageInDev)
-Vue.component('addition-dialog', AdditionDialog)
+Vue.component('app-page-in-dev', pageInDev);
+Vue.component('addition-dialog', AdditionDialog);
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
 new Vue({
@@ -28,4 +28,4 @@ new Vue({
   router,
   store,
   render: h => h(App)
-})
+});
