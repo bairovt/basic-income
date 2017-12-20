@@ -58,6 +58,7 @@
           {icon:'android', title: 'Технологии', link: '/hi-tech'},
           {icon:'edit', title: 'Альтернатива', link: '/alternative'},
           {icon:'grade', title: 'Ресурсы', link: '/resource'},
+          {icon:'language', title: 'Новости', link: '/news'},
           {icon:'done', title: 'О проекте', link: '/about'}
         ]
       }

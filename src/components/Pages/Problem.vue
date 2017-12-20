@@ -60,7 +60,7 @@
 							<v-flex xs7>
 								<v-card-title >
 									<span v-for="tech in job.techs" :key="tech._id">
-										<a v-if="tech.url" class="secondary--text" :href="tech.url" :target="tech.target">
+										<a v-if="tech.url" class="primary--text" :href="tech.url" :target="tech.target">
 											{{ tech.name }}
 										</a>
 										<span v-else>{{ tech.name }}</span>
@@ -73,13 +73,13 @@
 							<v-flex xs12>
 								<span v-for="proof in job.proofs" :key="proof._id"
 								>
-									<a v-if="proof.url" target="_blank" :href="proof.url" class="primary--text">
+									<a v-if="proof.url" target="_blank" :href="proof.url" class="secondary--text">
 										{{ proof.thesis }}
 									</a>
 									<span v-else>{{ proof.thesis }}</span>
 									&nbsp; <b>&#183;</b> &nbsp;
 								</span>
-								<a style="cursor: pointer" class="primary--text" @click.stop="openDialog('Подтверждение')">добавить</a>
+								<a style="cursor: pointer" @click.stop="openDialog('Подтверждение')">добавить</a>
 							</v-flex>
 						</v-layout>
 					</v-container>
