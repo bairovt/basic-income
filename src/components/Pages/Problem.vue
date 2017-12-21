@@ -71,12 +71,13 @@
 						</v-layout>
 						<v-layout row v-if="jobsInDanger">
 							<v-flex xs12>
-								<span v-for="proof in job.proofs" :key="proof._id"
+								<span v-for="p in job.proofs" :key="p._id"
 								>
-									<a v-if="proof.url" target="_blank" :href="proof.url" class="secondary--text">
-										{{ proof.thesis }}
+									<a v-if="p.url" target="_blank" :href="p.url">
+										 <!-- class="secondary--text" -->
+										{{ p.title }}
 									</a>
-									<span v-else>{{ proof.thesis }}</span>
+									<span v-else>{{ p.title }}</span>
 									&nbsp; <b>&#183;</b> &nbsp;
 								</span>
 								<a style="cursor: pointer" @click.stop="openDialog('Подтверждение')">добавить</a>
@@ -84,6 +85,8 @@
 						</v-layout>
 					</v-container>
 				</v-card>
+				<!-- 9144952835 Ольга Александровна пиявки спросить-->
+
 			</v-flex>
 		</v-layout>
 		<br>
