@@ -51,41 +51,48 @@
 				</h6>
 				<v-card class="mb-2" v-for="job in jobsInDanger" :key="job.id">
 					<v-container fluid>
+
 						<v-layout row>
-							<v-flex xs5>
-								<v-card-title>
-									<h6 class="accent--text">{{ job.title }}</h6>
-								</v-card-title>
-							</v-flex>
 							<v-flex xs7>
-								<v-card-title >
-									<span v-for="tech in job.techs" :key="tech._id">
-										<a v-if="tech.url" class="primary--text" :href="tech.url" :target="tech.target">
-											{{ tech.name }}
+								<!-- <v-card-title> -->
+									<h6 class="accent--text">{{ job.title }}</h6>
+								<!-- </v-card-title> -->
+								<span v-for="tech in job.techs" :key="tech._id">
+									<a v-if="tech.url" class="primary--text" :href="tech.url" :target="tech.target">
+										{{ tech.name }}
+									</a>
+									<span v-else>{{ tech.name }}</span>
+									&nbsp; &nbsp; &nbsp;
+								</span>
+							</v-flex>
+							<v-flex xs5>
+								<p>
+									<span v-for="s in job.services" :key="s._id">
+										<a :href="s.url" target="_blank">
+											{{ s.name }}
 										</a>
-										<span v-else>{{ tech.name }}</span>
-										&nbsp; &nbsp; &nbsp;
+										&nbsp; &nbsp; &nbsp; &nbsp;
 									</span>
-								</v-card-title>
+								</p>
 							</v-flex>
 						</v-layout>
-						<v-layout row v-if="jobsInDanger">
+
+						<v-layout row v-if="jobsInDanger" class="mt-3">
 							<v-flex xs12>
-								<span v-for="p in job.proofs" :key="p._id"
-								>
-									<a v-if="p.url" target="_blank" :href="p.url">
-										 <!-- class="secondary--text" -->
-										{{ p.title }}
-									</a>
-									<span v-else>{{ p.title }}</span>
-									&nbsp; <b>&#183;</b> &nbsp;
-								</span>
-								<a style="cursor: pointer" @click.stop="openDialog('Подтверждение')">добавить</a>
+								<!-- <p> -->
+									<span v-for="p in job.proofs" :key="p._id">
+										<a v-if="p.url" target="_blank" :href="p.url" class="secondary--text">
+											{{ p.title }}
+										</a>
+										<span v-else>{{ p.title }}</span>
+										&nbsp; <b>&#183;</b> &nbsp;
+									</span>
+									<a style="cursor: pointer" @click.stop="openDialog('Подтверждение')">добавить</a>
+								<!-- </p> -->
 							</v-flex>
 						</v-layout>
 					</v-container>
 				</v-card>
-				<!-- 9144952835 Ольга Александровна пиявки спросить-->
 
 			</v-flex>
 		</v-layout>
