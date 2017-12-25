@@ -1,12 +1,18 @@
 <template>
 	<v-container>
 		<v-layout row wrap>
-			<v-flex xs12 v-if="news">
-				<!-- <h5>{{tech.name}}</h5> -->
-				<h5>{{$route.params.tech}}</h5>
+			<v-flex xs12 v-if="tech">
+				<h5>{{tech.name}}</h5>
 
-				<h5>Новости</h5>
-				<v-card class="mb-2" v-for="n in news" :key="n._id">
+				<div v-if="tech.youtube">
+					<iframe width="560" height="315" :src="tech.youtube"
+									frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen>
+					</iframe>
+					<br />
+					<br />
+				</div>
+
+				<v-card class="mb-2" v-for="n in tech.news" :key="n._id">
 					<v-card-title >
 						<a v-if="n.url" class="secondary--text" :href="n.url" :target="n.target">
 							{{ n.title }}
@@ -26,19 +32,12 @@
 	export default {
 		data () {
 			return {
-				// tech: null,
-				news: null
+				tech: null,
 			}
-		},
-		computed: {
-			// tech: this.$route.params.tech
-		},
+		},		
 	  created () {
-			axiosInst.post('/api/load/news', {
-				tags: ['techs']
-				// tags: 'all'
-			}).then(resp => {
-					this.news = resp.data.news
+			axiosInst.get('/api/load/techs/' + this.$route.params.tech).then(resp => {
+					this.tech = resp.data.tech
 				})
 				.catch(console.error)
 		}

@@ -6,7 +6,7 @@
 
 				<v-card class="mb-2" v-for="n in news" :key="n._id">
 					<v-card-title >
-						<a v-if="n.url" class="secondary--text" :href="n.url" :target="n.target">
+						<a class="secondary--text" :href="n.url" :target="n.target">
 							{{ n.title }}
 						</a>
 					</v-card-title>
@@ -30,7 +30,7 @@
         news: null
 		  }
 	  },
-		created: function () {			
+		created: function () {
 			axiosInst.post('/api/load/news', {
 				tags: 'all'
 			}).then(resp => {

@@ -58,9 +58,12 @@
 									<h6 class="accent--text">{{ job.title }}</h6>
 								<!-- </v-card-title> -->
 								<span v-for="tech in job.techs" :key="tech._id">
-									<a v-if="tech.url" class="primary--text" :href="tech.url" :target="tech.target">
+									<a v-if="tech.url" :href="tech.url" :target="tech.target">
 										{{ tech.name }}
 									</a>
+									<router-link v-else-if="tech.label" :to="'/techs/'+tech.label">
+										{{ tech.name }}
+									</router-link>
 									<span v-else>{{ tech.name }}</span>
 									&nbsp; &nbsp; &nbsp;
 								</span>

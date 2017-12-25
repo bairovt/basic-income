@@ -9,7 +9,7 @@ import Resource from '@/components/Pages/Resource'
 import Views from '@/components/Pages/Views'
 import News from '@/components/Pages/News'
 import Features from '@/components/Pages/Features'
-import AllTech from '@/components/Pages/Techs/AllTechs'
+import AllTechs from '@/components/Pages/Techs/AllTechs'
 import Tech from '@/components/Pages/Techs/Tech'
 // import Profile from '@/components/User/Profile'
 // import Signin from '@/components/User/Signin'
@@ -70,8 +70,8 @@ export default new Router({
     },
     {
       path: '/techs',
-      name: 'AllTech',
-      component: AllTech
+      name: 'AllTechs',
+      component: AllTechs
     },
     {
       path: '/techs/:tech',
