@@ -19,8 +19,7 @@
 </template>
 
 <script>
-import axios from 'axios'
-// import openDialog from '@/utils/open-dialog'
+import axios from 'axios';
 import axiosInst from '@/utils/axios-instance'
 
 export default {

@@ -9,7 +9,8 @@ import Resource from '@/components/Pages/Resource'
 import Views from '@/components/Pages/Views'
 import News from '@/components/Pages/News'
 import Features from '@/components/Pages/Features'
-import HiTech from '@/components/Techs/HiTech'
+import AllTech from '@/components/Pages/Techs/AllTechs'
+import Tech from '@/components/Pages/Techs/Tech'
 // import Profile from '@/components/User/Profile'
 // import Signin from '@/components/User/Signin'
 // import Signup from '@/components/User/Signup'
@@ -27,11 +28,6 @@ export default new Router({
       path: '/problem',
       name: 'Problem',
       component: Problem
-    },
-    {
-      path: '/hi-tech',
-      name: 'HiTech',
-      component: HiTech
     },
     {
       path: '/alternative',
@@ -72,6 +68,16 @@ export default new Router({
       props: true,
       component: About
     },
+    {
+      path: '/techs',
+      name: 'AllTech',
+      component: AllTech
+    },
+    {
+      path: '/techs/:tech',
+      name: 'Tech',
+      component: Tech
+    }
   ],
   mode: 'history'
 })
