@@ -1,27 +1,26 @@
 <template>
-	<v-container>
+	<v-container v-if="tech">
 		<v-layout row wrap>
-			<v-flex xs12 v-if="tech">
+			<v-flex xs12>
 				<h5>{{tech.name}}</h5>
-
-				<div v-if="tech.youtube">
-					<iframe width="560" height="315" :src="tech.youtube"
-									frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen>
-					</iframe>
-					<br />
-					<br />
-				</div>
-
-				<v-card class="mb-2" v-for="n in tech.news" :key="n._id">
-					<v-card-title >
-						<a v-if="n.url" class="secondary--text" :href="n.url" :target="n.target">
-							{{ n.title }}
-						</a>
-					</v-card-title>
-				</v-card>
-
+				<!-- <h5 :html="tech.title ? tech.title : tech.name"></h5> -->
 			</v-flex>
 		</v-layout>
+
+		<v-layout row wrap class="mb10">
+			<v-flex xs8>
+				<div v-if="tech.youtube" class="video" >
+					<!-- <iframe width="560" height="315" :src="tech.youtube" -->
+					<iframe width="100%" height="100%" :src="tech.youtube"
+									frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen
+					>
+					</iframe>
+				</div>
+			</v-flex>
+		</v-layout>
+
+		<news :news="tech.news"></news>
+
 	</v-container>
 </template>
 
@@ -33,13 +32,33 @@
 		data () {
 			return {
 				tech: null,
+				techLabel: this.$route.params['techlabel']
 			}
-		},		
+		},
 	  created () {
-			axiosInst.get('/api/load/techs/' + this.$route.params.tech).then(resp => {
+			axiosInst.get('/api/load/techs/' + this.techLabel).then(resp => {
 					this.tech = resp.data.tech
 				})
 				.catch(console.error)
 		}
 	}
 </script>
+
+<style>
+/* video adjust styles */
+.video {
+	position:relative;
+	padding-bottom:56.25%;/*пропорции видео 16:9 */
+	padding-top:25px;
+	height:0;
+	overflow: hidden;
+}
+
+.video iframe {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+</style>

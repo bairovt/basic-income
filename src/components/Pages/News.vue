@@ -3,17 +3,10 @@
 		<v-layout row wrap>
 			<v-flex xs12>
 				<h5>Новости</h5>
-
-				<v-card class="mb-2" v-for="n in news" :key="n._id">
-					<v-card-title >
-						<a class="secondary--text" :href="n.url" :target="n.target">
-							{{ n.title }}
-						</a>
-					</v-card-title>
-				</v-card>
-
 			</v-flex>
 		</v-layout>
+
+		<news :news="news"></news>
 		<br>
 		<br>
 		<br>
@@ -40,6 +33,3 @@
 		}
 	}
 </script>
-
-<style scoped>
-</style>

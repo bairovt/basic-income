@@ -74,7 +74,7 @@ export default new Router({
       component: AllTechs
     },
     {
-      path: '/techs/:tech',
+      path: '/techs/:techlabel',
       name: 'Tech',
       component: Tech
     }
