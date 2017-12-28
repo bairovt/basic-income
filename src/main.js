@@ -6,21 +6,23 @@ import router from './router'
 import { store } from './store'
 import pageInDev from './components/Shared/PageInDev.vue'
 import AdditionDialog from './components/Shared/AdditionDialog.vue'
-import News from './components/Shared/News.vue'
+import NewsCmp from './components/Shared/NewsCmp.vue'
 import {
     Vuetify,
-    VApp, VNavigationDrawer, VList, VIcon, VToolbar, VBtn, VGrid, VDialog, VCard, VAlert, VTextField
+    VApp, VNavigationDrawer, VList, VIcon, VToolbar, VBtn, VGrid, VDialog, VCard,
+    VAlert, VTextField
 } from 'vuetify'
 
 Vue.use(Vuetify, {
   components: {
-    VApp, VNavigationDrawer, VList, VIcon, VToolbar, VBtn, VGrid, VDialog, VCard, VAlert, VTextField
+    VApp, VNavigationDrawer, VList, VIcon, VToolbar, VBtn, VGrid, VDialog, VCard,
+    VAlert, VTextField
   }
 });
 
 Vue.component('app-page-in-dev', pageInDev);
 Vue.component('addition-dialog', AdditionDialog);
-Vue.component('news', News);
+Vue.component('news', NewsCmp);
 
 Vue.config.productionTip = false;
 

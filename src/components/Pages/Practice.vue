@@ -29,8 +29,9 @@ export default {
 		}
 	},
 	created: function () {
-		axiosInst.get('/api/load/news/in_practice')
-			.then(resp => {
+		axiosInst.post('/api/load/news/', {
+			tags: ['practice']
+		}).then(resp => {
 				this.news = resp.data.news
 			})
 			.catch(console.error)

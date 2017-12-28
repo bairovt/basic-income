@@ -24,7 +24,7 @@
 	  },
 		created: function () {
 			axiosInst.post('/api/load/news', {
-				tags: 'all'
+				tags: [] // all
 			}).then(resp => {
 				  this.news = resp.data.news
 				})

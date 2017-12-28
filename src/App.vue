@@ -62,16 +62,19 @@
       return {
         drawer: false,
         menuItems: [
-          {icon:'supervisor_account', title: 'Проблема', link: '/problem'},
-          {icon:'android', title: 'Технологии', link: '/techs'},
-          {icon:'edit', title: 'Альтернатива', link: '/alternative'},
-          {icon:'grade', title: 'Ресурсы', link: '/resource'},
-          {icon:'language', title: 'Новости', link: '/news'},
-          {icon:'done', title: 'О проекте', link: '/about'}
+          {icon:'supervisor_account', title: 'Революция', link: '/revolution', toolbar: true},
+          {icon:'supervisor_account', title: 'Проблема', link: '/problem', toolbar: true},
+          {icon:'android', title: 'Технологии', link: '/techs', toolbar: false},
+          {icon:'edit', title: 'Альтернатива', link: '/alternative', toolbar: true},
+          {icon:'grade', title: 'Ресурсы', link: '/resource', toolbar: true},
+          {icon:'language', title: 'Новости', link: '/news', toolbar: true},
+          {icon:'done', title: 'О проекте', link: '/about', toolbar: true}
         ],
         sideMenuItems: [
-          {title: 'Революция', link: '/revolution'},
-          {title: 'Бездействие', link: '/inaction'}
+          {title: 'Видение', link: '/views'},
+          {title: 'Практика', link: '/practice'},
+          {title: 'Бездействие', link: '/inaction'},
+          {title: 'Видео', link: '/video'}
         ]
       }
     }
