@@ -5,7 +5,6 @@
 				<h5>Новости</h5>
 			</v-flex>
 		</v-layout>
-
 		<news :news="news"></news>
 		<br>
 		<br>

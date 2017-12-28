@@ -1,15 +1,14 @@
 <template>
-	<v-layout row wrap>
+	<v-layout row wrap class="mt-3">
 		<v-flex xs12>
-
-			<v-card class="mb-2" v-for="n in news" :key="n._id">
+			<v-card class="mb-1" v-for="n in news" :key="n._id">
 				<v-card-title >
+					<span class="news-date">{{ n.date }}</span>
 					<a class="secondary--text" :href="n.url" :target="n.target">
-						<span class="news-date">{{ n.date }}</span>  {{ n.title }}
+						{{ n.title }}
 					</a>
 				</v-card-title>
 			</v-card>
-
 		</v-flex>
 	</v-layout>
 </template>

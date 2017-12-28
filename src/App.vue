@@ -15,6 +15,14 @@
             {{item.title}}
           </v-list-tile-content>
         </v-list-tile>
+        <v-list-tile v-for="item in sideMenuItems" :key="item.title" :to="item.link">
+          <v-list-tile-action>
+            <v-icon>{{item.icon}}</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            {{item.title}}
+          </v-list-tile-content>
+        </v-list-tile>
       </v-list>
     </v-navigation-drawer>
     <v-toolbar dark class="primary">
@@ -60,6 +68,10 @@
           {icon:'grade', title: 'Ресурсы', link: '/resource'},
           {icon:'language', title: 'Новости', link: '/news'},
           {icon:'done', title: 'О проекте', link: '/about'}
+        ],
+        sideMenuItems: [
+          {title: 'Революция', link: '/revolution'},
+          {title: 'Бездействие', link: '/inaction'}
         ]
       }
     }
