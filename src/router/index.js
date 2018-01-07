@@ -11,10 +11,10 @@ import Resource from '@/components/Pages/Resource'
 import Views from '@/components/Pages/Views'
 import News from '@/components/Pages/News'
 import Features from '@/components/Pages/Features'
-// import Revol from '@/components/Pages/Revol'
 import AllTechs from '@/components/Pages/Techs/AllTechs'
 import Tech from '@/components/Pages/Techs/Tech'
 import Video from '@/components/Pages/Video'
+// import Crime from '@/components/Blog/Crime'
 // import Profile from '@/components/User/Profile'
 // import Signin from '@/components/User/Signin'
 // import Signup from '@/components/User/Signup'
@@ -33,10 +33,10 @@ export default new Router({
     {path: '/about', name: 'About', props: true, component: About},
     {path: '/techs', name: 'AllTechs', component: AllTechs},
     {path: '/techs/:techlabel', name: 'Tech', component: Tech},
-    // {path: '/revol', name: 'Revol', props: true, component: Revol},
     {path: '/practice', name: 'Practice', component: Practice},
     {path: '/inaction', name: 'Inaction', component: Inaction},
     {path: '/video', name: 'Video', component: Video},
+    // {path: '/crime', name: 'Crime', component: Crime},
   ],
   mode: 'history'
 })

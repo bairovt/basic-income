@@ -1,16 +1,16 @@
 <template>
 	<v-container>
-		<app-page-in-dev></app-page-in-dev>
-
     <addition-dialog></addition-dialog>
 
 		<v-layout row wrap>
 			<v-flex xs12>
-				<h5>Источники финансирования базового дохода
-          <v-btn class="primary" @click.stop="openDialog('Источник финансирования')">
-            Предложить
-          </v-btn>:
+				<h5>Источники финансирования базового дохода:
         </h5>
+				<v-btn class="primary" @click.stop="openDialog('Источник финансирования')">
+					Предложить
+				</v-btn>
+				<br />
+				<br />
 				<ul>
 					<li>
 						<p>Отмена неактуальных при базовом доходе социальных программ и выплат:

@@ -1,11 +1,10 @@
 <template>
 	<v-container>
-		<app-page-in-dev></app-page-in-dev>
     <addition-dialog></addition-dialog>
 
 		<v-layout row wrap>
 			<v-flex xs12>
-				<h5 class="primary--text">Мнение успешных
+				<h5 class="primary--text">Сторонники
           <v-btn class="primary" @click.stop="openDialog('Мнение')">
             Добавить
           </v-btn></h5>
@@ -13,6 +12,10 @@
 				<p>
 					Businnes Insider собрал в одном материале 11 представителей IT-индустри, которые верят в необходимость базового безусловного дохода — концепции, когда люди получают определенный объем денег просто потому что живут. Среди сторонников регулярных выплат — Ричард Брэнсон, Илон Маск, Эндрю Ын и другие.
 				</p>
+				<v-card>
+
+				</v-card>
+				
 				<blockquote>
 					<b>Ричард Брэнсон</b>
 					<br>

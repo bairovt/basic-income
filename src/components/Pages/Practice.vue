@@ -1,8 +1,7 @@
 <template>
 	<v-container>
 		<v-layout row wrap>
-			<v-flex xs12>
-				<app-page-in-dev></app-page-in-dev>
+			<v-flex xs12>				
 				<h5>Международная практика</h5>
 
 				<v-card class="mb-2" v-for="n in news" :key="n._id">

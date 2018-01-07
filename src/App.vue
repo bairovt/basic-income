@@ -64,13 +64,13 @@
         menuItems: [
           {icon:'supervisor_account', title: 'Революция', link: '/revolution', toolbar: true},
           {icon:'supervisor_account', title: 'Проблема', link: '/problem', toolbar: true},
-          {icon:'android', title: 'Технологии', link: '/techs', toolbar: false},
           {icon:'edit', title: 'Альтернатива', link: '/alternative', toolbar: true},
           {icon:'grade', title: 'Ресурсы', link: '/resource', toolbar: true},
           {icon:'language', title: 'Новости', link: '/news', toolbar: true},
           {icon:'done', title: 'О проекте', link: '/about', toolbar: true}
         ],
         sideMenuItems: [
+          {icon:'android', title: 'Технологии', link: '/techs', toolbar: false},
           {title: 'Видение', link: '/views'},
           {title: 'Практика', link: '/practice'},
           {title: 'Бездействие', link: '/inaction'},

@@ -1,11 +1,14 @@
 <template>
 	<v-container>
 		<!-- <app-page-in-dev></app-page-in-dev> -->
-		<v-layout row wrap>
-			<v-flex xs12>
-				<h5>Революционные технологии</h5>
+		<h5>Революционные технологии</h5>
 
-				<v-card class="mb-2" v-for="tech in techs" :key="tech._id">
+		<v-layout row wrap>
+
+
+			<v-flex xs12 md6 v-for="tech in techs" :key="tech._id">
+
+				<v-card class="mb-2 mr-2">
 					<v-card-title v-if="tech.label || tech.url">
 						<a v-if="tech.url" :href="tech.url" target="_blank">
 							{{ tech.name }}
