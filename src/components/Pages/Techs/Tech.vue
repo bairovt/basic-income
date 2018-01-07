@@ -8,7 +8,7 @@
 		</v-layout>
 
 		<v-layout row wrap class="mb10">
-			<v-flex xs8>
+			<v-flex xs12 md6>
 				<div v-if="tech.youtube" class="video" >
 					<!-- <iframe width="560" height="315" :src="tech.youtube" -->
 					<iframe width="100%" height="100%" :src="tech.youtube"
@@ -43,22 +43,3 @@
 		}
 	}
 </script>
-
-<style>
-/* video adjust styles */
-.video {
-	position:relative;
-	padding-bottom:56.25%;/*пропорции видео 16:9 */
-	padding-top:25px;
-	height:0;
-	overflow: hidden;
-}
-
-.video iframe {
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-}
-</style>

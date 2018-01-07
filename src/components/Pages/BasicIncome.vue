@@ -17,10 +17,25 @@
 					<a target="_blank" href="https://ru.wikipedia.org/wiki/Безусловный_базовый_доход">
 						безусловный базовый доход</a> (ББД), безусловный основной доход (БОД), универсальный базовый доход,
 					а также <router-link to="/alternative">альтернативные меры</router-link> по решению
-					<router-link to="/revolution">проблемы</router-link>
+					<router-link to="/problem">проблемы</router-link>
 					массовой безработицы, связанной с четвертой промышленной революцией.
 				</p>
-				<p><router-link to="/features">Критерии БД независимо от способа реализации</router-link></p>
+				<br />
+				<v-layout row wrap>
+					<v-flex xs12 md6 class="pa-1">
+						<div class="video">
+							<iframe width="100%" height="100%" src="https://www.youtube.com/embed/ekv5wPDM_z8"
+							frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+						</div>
+					</v-flex>
+					<v-flex xs12 md6 class="pa-1">
+						<div class="video">
+							<iframe width="100%" height="100%" src="https://www.youtube.com/embed/zQS1n1CC8ng"
+							frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+						</div>
+					</v-flex>
+				</v-layout>
+				<!-- <p><router-link to="/features">Каким должен быть базовый доход.</router-link></p> -->
 				<br>
 				<br>
 			</v-flex>

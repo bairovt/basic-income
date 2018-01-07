@@ -7,6 +7,14 @@
       app
     >
       <v-list>
+        <v-list-tile to="/">
+          <v-list-tile-action>
+            <v-icon>spa</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            Базовый доход
+          </v-list-tile-content>
+        </v-list-tile>
         <v-list-tile v-for="item in menuItems" :key="item.title" :to="item.link">
           <v-list-tile-action>
             <v-icon>{{item.icon}}</v-icon>
@@ -62,7 +70,7 @@
       return {
         drawer: false,
         menuItems: [
-          {icon:'supervisor_account', title: 'Революция', link: '/revolution', toolbar: true},
+          {icon:'trending_up', title: 'Революция', link: '/revolution', toolbar: true},
           {icon:'supervisor_account', title: 'Проблема', link: '/problem', toolbar: true},
           {icon:'edit', title: 'Альтернатива', link: '/alternative', toolbar: true},
           {icon:'grade', title: 'Ресурсы', link: '/resource', toolbar: true},
@@ -115,5 +123,21 @@
 
   p {
     font-size: 1.2em;
+  }
+  /* video adjust styles */
+  .video {
+  	position:relative;
+  	padding-bottom:56.25%;/*пропорции видео 16:9 */
+  	padding-top:25px;
+  	height:0;
+  	overflow: hidden;
+  }
+
+  .video iframe {
+  	position:absolute;
+  	top:0;
+  	left:0;
+  	width:100%;
+  	height:100%;
   }
 </style>

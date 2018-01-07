@@ -1,6 +1,5 @@
 <template>
-	<v-container>
-		<app-page-in-dev></app-page-in-dev>
+	<v-container>		
     <addition-dialog></addition-dialog>
 
 		<v-layout row wrap>
