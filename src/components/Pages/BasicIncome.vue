@@ -1,6 +1,13 @@
 <template>
 	<v-container>  <!-- fluid class="mt-3"-->
-		<app-page-in-dev></app-page-in-dev>
+		<v-layout>
+			<v-flex class="text-xs-right">
+				<p>Человек, его права и свободы являются высшей ценностью</p>
+				<!-- <p>&#8220;единственным источником власти в Российской Федерации является ее многонациональный народ&#8221;</p> -->
+        <em>Конституция РФ</em>
+			</v-flex>
+    </v-layout>
+
 		<addition-dialog></addition-dialog>
 
 		<v-layout row>
@@ -19,6 +26,10 @@
 					а также <router-link to="/alternative">альтернативные меры</router-link> по решению
 					<router-link to="/problem">проблемы</router-link>
 					массовой безработицы, связанной с четвертой промышленной революцией.
+				</p>
+				<p>
+					<a href="http://hbr-russia.ru/biznes-i-obshchestvo/ekonomika/p24661/" target="_blank">
+						Бесплатные деньги: как всеобщий базовый доход может изменить мир</a>
 				</p>
 				<br />
 				<v-layout row wrap>

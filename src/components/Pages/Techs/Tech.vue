@@ -3,14 +3,13 @@
 		<v-layout row wrap>
 			<v-flex xs12>
 				<h5>{{tech.name}}</h5>
-				<!-- <h5 :html="tech.title ? tech.title : tech.name"></h5> -->
+				<h6>{{tech.title}}</h6>
 			</v-flex>
 		</v-layout>
 
 		<v-layout row wrap class="mb10">
 			<v-flex xs12 md6>
 				<div v-if="tech.youtube" class="video" >
-					<!-- <iframe width="560" height="315" :src="tech.youtube" -->
 					<iframe width="100%" height="100%" :src="tech.youtube"
 									frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen
 					>
