@@ -8,7 +8,6 @@ const axiosInst = axios.create({
   // withCredentials: true
 });
 
-
 axiosInst.interceptors.request.use(function (config) {
     const authToken = window.localStorage.getItem('authToken'); // token or null
     if (authToken) config.headers.Authorization = 'Bearer ' + authToken;
