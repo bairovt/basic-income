@@ -48,6 +48,11 @@
 				</v-layout>
 				<!-- <p><router-link to="/features">Каким должен быть базовый доход.</router-link></p> -->
 				<br>
+				<p>
+					<a href="https://www.rbc.ru/economics/16/02/2018/5a85a1ce9a79476afca9f8d5" target="_blank">
+						Более половины россиян высказались за минимальный гарантированный доход</a>
+
+				</p>
 				<br>
 			</v-flex>
 		</v-layout>
